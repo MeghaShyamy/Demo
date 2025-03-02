@@ -1,0 +1,28 @@
+npm int -y
+
+npm i express
+const express = require('express')//npm i express
+
+const app=express();
+app.get('/',(req,res)=>{
+    res.send("hey")
+})
+app.listen(3000)
+
+npm i mongoose ==>  communicate from node server to mongodb server
+
+ORM ==> Object relational Mapping ==> CRUD ==> RDBMS
+OBM==> Object Document mapping for mongodb
+
+
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb://127.0.0.1:27017/mongopratice')
+
+const userschema =mongoose.schema({
+    name:String,
+    username:String,
+    email:String,
+})
+
+module.exports=mongoose.model('user',userschema)
